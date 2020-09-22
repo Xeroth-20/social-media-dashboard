@@ -1,0 +1,31 @@
+<div class="sm-dashboard">
+    <header class="dashboard-header">
+        <div class="container">
+            <div class="db-header-title-container">
+                <h1 class="db-header-title text1">
+                    Social Media Dashboard
+                </h1>
+                <strong *ngIf="snUserStats.totalFollowers" class="db-header-total-followers text2">
+                    Total Followers: {{ snUserStats.totalFollowers | separateNumber:3:',' }}
+                </strong>
+            </div>
+            <div class="db-header-separator border-color"></div>
+            <div class="db-header-mode-container">
+                <strong class="db-header-mode-title text2">Dark Mode</strong>
+                <div (click)="changeTheme()" jxToggleSlide class="db-header-mode-toggle"></div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="dashboard-main">
+            <jx-smd-followers-card *ngFor="let snStats of snUserStats.socialNetworkStatsList" [snStats]="snStats">
+            </jx-smd-followers-card>
+        </div>
+        <div class="dashboard-overview">
+            <h2 class="db-overview-title text2">Overview - Today</h2>
+            <ng-container *ngFor="let snStats of snUserStats.socialNetworkStatsList">
+                <jx-smd-overview-card *ngFor="let overview of snStats.overviewList" [snOverview]="overview"></jx-smd-overview-card>
+            </ng-container>
+        </div>
+    </div>
+</div>

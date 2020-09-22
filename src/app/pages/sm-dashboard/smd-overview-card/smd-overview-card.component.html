@@ -1,0 +1,9 @@
+<div class="smd-overview-card">
+    <span class="overview-title text2"> {{ overview.overviewName | spacedPascalCase }} </span>
+    <figure class="sn-logo" [class]="overview.snName"></figure>
+    <strong class="overview-total text1"> {{ overview.todayStats | compressedNumber }} </strong>
+    <div class="overview-indicator">
+        <figure class="indicator" [class]="overview.todayIncrease > 0 ? 'up' : 'down'"></figure>
+        <span class="overview-count-up" [class]="overview.todayIncrease > 0 ? 'text-success' : 'text-danger'"> {{ overview.todayIncrease }}% </span>
+    </div>
+</div>

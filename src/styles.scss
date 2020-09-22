@@ -1,1 +1,406 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+    line-height: normal;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+.root {
+    font-family: 'Inter', sans-serif, arial;
+    font-size: 14px;
+    min-width: 325px;
+}
+
+.container {
+    padding: 0 25px;
+    margin: 0 auto;
+    max-width: 1160px;
+}
+
+.sn-logo {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.sn-logo.facebook {
+    background-image: url('./assets/svgs/icon-facebook.svg');
+}
+
+.sn-logo.twitter {
+    background-image: url('./assets/svgs/icon-twitter.svg');
+}
+
+.sn-logo.instagram {
+    background-image: url('./assets/svgs/icon-instagram.svg');
+}
+
+.sn-logo.youtube {
+    background-image: url('./assets/svgs/icon-youtube.svg');
+}
+
+.indicator {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+    margin-right: 5px;
+    width: 8px;
+    height: 8px;
+}
+
+.text-success {
+    color: #1db489;
+}
+
+.text-danger {
+    color: #dc414c;
+}
+
+.indicator.up {
+    background-image: url('./assets/svgs/icon-up.svg');
+}
+
+.indicator.down {
+    background-image: url('./assets//svgs/icon-down.svg');
+}
+
+/* smd */
+.sm-dashboard {
+    transition: background 0.3s;
+    min-height: 100vh;
+
+    .smd-followers-card,
+    .smd-overview-card {
+        max-width: 325px;
+        margin: 0 auto;
+    }
+
+    .dashboard-header {
+        border-radius: 0px 0px 20px 20px;
+        transition: background 0.3s;
+        padding-bottom: 130px;
+
+        > .container {
+            justify-content: space-between;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .db-header-separator {
+            border-top: 1px solid;
+            display: block;
+        }
+
+        .db-header-title-container {
+            padding: 35px 0 25px 0;
+
+            .db-header-title {
+                font-size: 1.95em;
+                transition: color 0.3s;
+                margin-bottom: 5px;
+                margin-top: 0;
+            }
+
+            .db-header-total-followers {
+                transition: color 0.3s;
+            }
+        }
+
+        .db-header-mode-container {
+            align-items: center;
+            display: flex;
+            padding: 15px 0;
+
+            .db-header-mode-title {
+                transition: color 0.3s;
+                margin-right: 15px;
+            }
+
+            .db-header-mode-toggle {
+                border-radius: 25px;
+                cursor: pointer;
+                padding: 3px;
+                width: 47px;
+                height: 24px;
+
+                &::before {
+                    border-radius: 50%;
+                    content: "";
+                    display: block;
+                    transform: translateX(0px);
+                    transition: transform 0.3s;
+                    width: 18px;
+                    height: 18px;
+                }
+
+                &.slide::before {
+                    transform: translateX(22px);
+                }
+            }
+        }
+    }
+
+    .dashboard-main {
+        display: grid;
+        column-gap: 30px;
+        row-gap: 10px;
+        padding: 21px 0;
+        margin-top: -130px;
+
+        .smd-followers-card {
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            padding: 32px 20px 25px 20px;
+            transition: background 0.3s;
+            margin-bottom: 24px;
+
+            &.facebook {
+                &::before {
+                    background-color: #198ff5;
+                }
+            }
+
+            &.twitter {
+                &::before {
+                    background-color: #1ca0f2;
+                }
+            }
+
+            &.instagram {
+                &::before {
+                    background-image: linear-gradient(to right, #fdc468, #df4996);
+                }
+            }
+
+            &.youtube {
+                &::before {
+                    background-color: #c4032a;
+                }
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 4px;
+            }
+            
+            .followers-card-header {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                
+                .sn-user {
+                    font-size: 0.85em;
+                    font-weight: 700;
+                    transition: color 0.3s;
+                    margin-left: 7.5px;
+                }
+            }
+
+            .followers-card-body {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 20px 0;
+
+                .followers-total {
+                    font-size: 3.75em;
+                    transition: color 0.3s;
+                }
+
+                .followers-text {
+                    font-size: 0.9em;
+                    letter-spacing: 0.35em;
+                    transition: color 0.3s;
+                }
+            }
+
+            .followers-card-footer {
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                padding-top: 5px;
+
+                .followers-count-up {
+                    font-size: 0.85em;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .dashboard-overview {
+        display: grid;
+        column-gap: 30px;
+        row-gap: 10px;
+        padding-bottom: 29px;
+
+        .db-overview-title {
+            font-size: 1.73em;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+        .smd-overview-card {
+            border-radius: 5px;
+            cursor: pointer;
+            display: grid;
+            grid-template: repeat(2, auto) / repeat(2, auto);
+            transition: background 0.3s;
+            padding: 25px 30px 25px 25px;
+            margin-bottom: 16px;
+            height: 125px;
+
+            .overview-title {
+                font-size: 0.97em;
+                font-weight: 700;
+                transition: color 0.3s;
+            }
+
+            > .sn-logo {
+                justify-self: end;
+            }
+
+            .overview-total {
+                align-self: end;
+                font-size: 2.25em;
+                line-height: 0.85em;
+                transition: color 0.3s;
+            }
+
+            .overview-indicator {
+                align-items: center;
+                display: flex;
+                align-self: end;
+                justify-content: flex-end;
+            }
+
+            .overview-count-up {
+                font-size: 0.85em;
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+/* themes */
+$themes: (
+    'dark': (
+        'topbg-color': hsl(230, 19%, 15%),
+        'bg-color': hsl(230, 17%, 14%),
+        'bgcard-color': hsl(228, 28%, 20%),
+        'bgcardhover-color': hsl(228, 26%, 27%),
+        'text1': hsl(0, 0%, 100%),
+        'text2': hsl(228, 34%, 66%),
+        'toggle-color': linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%)),
+        'togglehover-color': hsl(230, 22%, 74%)
+    ),
+    'light': (
+        'topbg-color': hsl(225, 100%, 98%),
+        'bg-color': hsl(0, 0%, 100%),
+        'bgcard-color': hsl(227, 47%, 96%),
+        'bgcardhover-color': hsl(232, 33%, 91%),
+        'text1': hsl(230, 17%, 14%),
+        'text2': hsl(228, 12%, 44%),
+        'toggle-color': hsl(230, 22%, 74%),
+        'togglehover-color': linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%))
+    )
+);
+
+@each $key, $map in $themes {
+    .root[data-theme=#{$key}] {
+        .border-color {
+            border-color: map-get($map, 'text2');
+        }
+
+        .text1 {
+            color: map-get($map, 'text1');
+        }
+
+        .text2 {
+            color: map-get($map, 'text2');
+        }
+
+        .dashboard-header {
+            background-color: map-get($map, 'topbg-color');
+        }
+
+        .sm-dashboard {
+            background-color: map-get($map, 'bg-color');
+        }
+
+        .smd-followers-card,
+        .smd-overview-card {
+            background-color: map-get($map, 'bgcard-color');
+
+            &:hover {
+                background-color: map-get($map, 'bgcardhover-color');
+            }
+        }
+
+        .db-header-mode-toggle {
+            background: map-get($map, 'toggle-color');
+
+            &:hover {
+                background: map-get($map, 'togglehover-color');
+            }
+
+            &::before {
+                background-color: map-get($map, 'bg-color');
+            }
+        }
+    }
+}
+
+/* breakpoints */
+@media screen and (min-width: 768px) {
+    .sm-dashboard {
+        .dashboard-main,
+        .dashboard-overview {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .dashboard-overview {
+            .db-overview-title {
+                grid-column: 1 / 2 span;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .sm-dashboard {
+        .dashboard-main,
+        .dashboard-overview {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .dashboard-overview {
+            .db-overview-title {
+                grid-column: 1 / 4 span;
+            }
+        }
+
+        .dashboard-header {
+            .db-header-separator {
+                display: none;
+            }
+
+            > .container {
+                flex-direction: row;
+            }
+        }
+    }
+}

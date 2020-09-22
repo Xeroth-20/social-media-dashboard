@@ -1,0 +1,14 @@
+<div class="smd-followers-card" [class]="socialNetwork.snName">
+    <div class="followers-card-header">
+        <figure class="sn-logo" [class]="socialNetwork.snName"></figure>
+        <span class="sn-user text2">@{{ socialNetwork.snUsername }}</span>
+    </div>
+    <div class="followers-card-body">
+        <strong class="followers-total text1"> {{ socialNetwork.totalFollowers | compressedNumber }} </strong>
+        <span class="followers-text text2">  {{ socialNetwork.snName != 'youtube' ? 'FOLLOWERS' : 'SUBSCRIBERS' }} </span>
+    </div>
+    <div class="followers-card-footer">
+        <figure class="indicator" [class]="socialNetwork.todayFollowers > 0 ? 'up' : 'down'"></figure>
+        <span class="followers-count-up" [class]="socialNetwork.todayFollowers > 0 ? 'text-success' : 'text-danger'"> {{ socialNetwork.todayFollowers }} Today</span>
+    </div>
+</div>
