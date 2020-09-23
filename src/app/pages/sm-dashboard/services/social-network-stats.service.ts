@@ -11,7 +11,7 @@ import { SnStats } from './../models/snStats.model'
 @Injectable()
 export class SocialNetworkStatsService {
 
-    private apiBaseUrl: string = 'http://localhost:8000/api/v1'
+    private apiBaseUrl: string = 'https://socialm-dashboard.herokuapp.com/api/v1'
 
     constructor(
         private _http: HttpClient
