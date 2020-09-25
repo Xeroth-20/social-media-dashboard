@@ -1,5 +1,9 @@
-# PREVIEW
-(image) https://github.com/Xeroth-20/page-not-found
+# Previsualizacion
+
+![screenshot](https://i.ibb.co/wN0gbdd/a.png)
+
+#Sitio web
+https://mydashboard-sand.vercel.app/social-media-dashboard
 
 # SocialMediaDashboard
 
